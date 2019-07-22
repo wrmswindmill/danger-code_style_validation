@@ -68,7 +68,7 @@ module Danger
       end
 
       return if message.empty?
-      fail VIOLATION_ERROR_MESSAGE
+      warn VIOLATION_ERROR_MESSAGE
       markdown '### Code Style Check'
       markdown '---'
       markdown message
