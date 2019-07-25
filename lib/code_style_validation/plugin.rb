@@ -61,9 +61,11 @@ module Danger
         offending_files.each do |file_name|
           message += '* `' + file_name + "`\n\n"
         end
-        message += 'Execute one of the following actions and commit again:' + "\n"
-        message += '1. Run `%s` on the offending files' % validator + "\n"
+        message += 'If you have not install `clang-format`, you can install clang-format by `npm install -g clang-format`' + "\n"
+        message += 'Then Execute one of the following actions and commit again:' + "\n"
+        message += '1. Run `%s -i ` on the offending files' % validator + "\n"
         message += '2. Apply the suggested patches with `git apply patch`.' + "\n\n"
+        message += 'If you use Xcode,you can also use clang-format plugin: https://github.com/travisjeffery/ClangFormat-Xcode' +"\n"
         message += patches.join("\n")
       end
 
